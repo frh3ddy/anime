@@ -136,7 +136,7 @@
   var toArray = function(o) {
     if (is.arr(o)) return o;
     if (is.str(o)) o = selectString(o) || o;
-    if (o instanceof NodeList || o instanceof HTMLCollection) return [].slice.call(o);
+    // if (o instanceof NodeList || o instanceof HTMLCollection) return [].slice.call(o);
     return [o];
   }
 
@@ -259,9 +259,9 @@
   }
 
   var getAnimationType = function(el, prop) {
-    if ( is.dom(el) && arrayContains(validTransforms, prop)) return 'transform';
-    if ( is.dom(el) && (el.getAttribute(prop) || (is.svg(el) && el[prop]))) return 'attribute';
-    if ( is.dom(el) && (prop !== 'transform' && getCSSValue(el, prop))) return 'css';
+    // if ( is.dom(el) && arrayContains(validTransforms, prop)) return 'transform';
+    // if ( is.dom(el) && (el.getAttribute(prop) || (is.svg(el) && el[prop]))) return 'attribute';
+    // if ( is.dom(el) && (prop !== 'transform' && getCSSValue(el, prop))) return 'css';
     if (!is.nul(el[prop]) && !is.und(el[prop])) return 'object';
   }
 
